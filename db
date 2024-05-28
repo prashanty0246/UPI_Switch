@@ -1,0 +1,89 @@
+MariaDB [mcb]> desc user_token;
++----------------------+---------------+------+-----+---------+-------+
+| Field                | Type          | Null | Key | Default | Extra |
++----------------------+---------------+------+-----+---------+-------+
+| value                | decimal(60,1) | NO   | PRI | NULL    |       |
+| id                   | varchar(100)  | NO   | PRI | NULL    |       |
+| claimed_timestamp    | timestamp(3)  | YES  |     | NULL    |       |
+| creation_timestamp   | timestamp(3)  | YES  |     | NULL    |       |
+| currency             | text          | YES  |     | NULL    |       |
+| doc_type             | text          | YES  |     | NULL    |       |
+| expiration_timestamp | timestamp(3)  | YES  |     | NULL    |       |
+| issuer_address       | text          | YES  |     | NULL    |       |
+| issuer_signature     | text          | YES  |     | NULL    |       |
+| maximum_count        | int(11)       | YES  |     | NULL    |       |
+| owner_address        | text          | YES  |     | NULL    |       |
+| owner_vault_id       | text          | YES  |     | NULL    |       |
+| serial_no            | text          | YES  | MUL | NULL    |       |
+| status               | text          | YES  |     | NULL    |       |
+| tag                  | text          | YES  |     | NULL    |       |
+| txn_id               | text          | YES  | MUL | NULL    |       |
+| type                 | text          | YES  |     | NULL    |       |
+| updated_timestamp    | timestamp(3)  | YES  |     | NULL    |       |
+| usage_count          | int(11)       | YES  |     | NULL    |       |
+| isIssued             | tinyint(1)    | YES  |     | NULL    |       |
+| meta                 | text          | YES  |     | NULL    |       |
++----------------------+---------------+------+-----+---------+-------+
+21 rows in set (0.001 sec)
+
+
+
+
+  MariaDB [mcb]> desc rtsp_recon_queue;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | varchar(20) | YES  |     | NULL    |       |
+| status | text        | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.001 sec)
+
+
+
+  MariaDB [mcb]> desc rtsp_dtsp_recon_discrepancy;
++--------------------+--------------+------+-----+---------+-------+
+| Field              | Type         | Null | Key | Default | Extra |
++--------------------+--------------+------+-----+---------+-------+
+| resolution_id      | varchar(100) | NO   | PRI | NULL    |       |
+| amount             | text         | YES  |     | NULL    |       |
+| txn_id             | text         | YES  |     | NULL    |       |
+| status             | text         | YES  |     | NULL    |       |
+| reconId            | text         | YES  |     | NULL    |       |
+| batchId            | text         | YES  |     | NULL    |       |
+| creation_timestamp | timestamp(3) | YES  |     | NULL    |       |
+| is_report_sent     | tinyint(1)   | YES  |     | NULL    |       |
++--------------------+--------------+------+-----+---------+-------+
+8 rows in set (0.001 sec)
+
+
+
+  MariaDB [mcb]> desc rtsp_dtsp_recon_txn;        
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| txn_type   | text         | YES  |     | NULL    |       |
+| created_at | timestamp(3) | NO   | PRI | NULL    |       |
+| txn_id     | varchar(100) | NO   | PRI | NULL    |       |
+| amount     | text         | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+4 rows in set (0.001 sec)
+
+
+
+  MariaDB [mcb]> desc transaction;
++-----------------------+---------------+------+-----+---------+-------+
+| Field                 | Type          | Null | Key | Default | Extra |
++-----------------------+---------------+------+-----+---------+-------+
+| transaction_id        | varchar(100)  | NO   | PRI | NULL    |       |
+| creation_timestamp    | timestamp(3)  | NO   | PRI | NULL    |       |
+| amount                | decimal(60,1) | YES  |     | NULL    |       |
+| id                    | text          | YES  | MUL | NULL    |       |
+| receiver_address      | text          | YES  |     | NULL    |       |
+| receiver_organization | text          | YES  |     | NULL    |       |
+| remark                | text          | YES  |     | NULL    |       |
+| sender_address        | text          | YES  |     | NULL    |       |
+| sender_organization   | text          | YES  |     | NULL    |       |
+| status                | text          | YES  |     | NULL    |       |
+| type                  | text          | YES  |     | NULL    |       |
++-----------------------+---------------+------+-----+---------+-------+
+11 rows in set (0.001 sec)
